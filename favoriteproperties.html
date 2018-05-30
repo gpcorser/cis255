@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+
+<!-- ********************************************************************
+COPYRIGHT : GNU General Public License (http://www.gnu.org/licenses/) 
+            See bottom of file for details.
+AUTHOR    : George Corser
+EMAIL     : gcorser@gmail.com
+URL       : csis.svsu.edu/~gpcorser/cis255/favoriteproperties.html
+******************************************************************** -->
+
+<!--
+Twenty CSS properties demonstrated in this file are listed below. The properties that are also discussed are marked with asterisks. 
+	1. column-count 	see external file, favoriteproperties.css 
+	2. max-width 		see external file, favoriteproperties.css
+	3. border 			see external file, favoriteproperties.css
+	4. border-radius 	see external file, favoriteproperties.css
+	5. * display 		see this file, lines 112-118
+	6. * float			see external file, favoriteproperties.css
+	7. text-align		see this file, line 139
+	8.
+	9.
+	10.
+	11.
+	12.
+	13.
+	14.
+	15.
+	16.
+	17.
+	18.
+	19.
+	20.
+-->
+
+<html lang="en">
+
+<head>
+
+	<!-- TAB-TITLE/FAVICON -->
+	<title>Web App Development - Favorite CSS Properties </title>
+	<link rel="icon" href="cardinal_logo.png" type="image/png" />
+	
+	<!-- METADATA -->
+	<meta charset="utf-8" />
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+	<meta name="author" content="George Corser" />
+	<meta name="contact" content="gpcorser@svsu.edu" />
+	<meta name="copyright" content="George Corser" />
+	<meta name="description" content="essay" />
+	<meta name="keywords" content="web, development, client side, front end, css" />
+
+	<!-- CSS -->
+	<link rel="stylesheet" type="text/css" href="favoriteproperties.css">
+	
+</head>
+
+<body>
+
+	<form action="https://github.com/gpcorser/cis255">
+		<input type="submit" value="Go to Github" />
+	</form>
+	
+	<header>
+		<h1 align="center">Web App Development</h1>
+		<h2 align="center">TWENTY USEFUL CSS PROPERTIES</h2>
+	</header>
+	
+	<main>
+	
+	<section title="introduction">
+	
+		<div class="twoColumn">
+	
+		<h3>Introduction</h3>
+		
+		<p>This file is a deliberately incomplete template for students. Please use images you own, or images provided for royalty-free reuse. For examples, visit: <a href="https://images.google.com">images.google.com</a>. Type a search term, then select Tools |  Usage Rights | Labeled for reuse with modification.</p>
+		
+		<img width="100%" src="favoriteproperties01.png" />
+		
+		</div> <!-- end: div class="twoColumn" -->
+		
+		<hr />
+		
+	</section>
+	
+	<section title="displayProperty">
+	
+		<div class="twoColumn">
+		
+		<h3>The <i>display</i> Property</h3>
+		
+		<p><strong>Discussion</strong>. By default, the <i>&lt;div&gt;</i> tag defines a <i>block</i> element, and the <i>&lt;span&gt;</i> tag defines an <i>inline</i> element. Block elements cause a line break, where inline elements are rendered left-to-right and wordwrapped, that is, the "normal flow." It is possible to override these defaults using the <strong><i>display</i></strong> property. </p>
+
+		<!-- Note: indentation rendered on web page will be the same as the indentation inside the <pre> tag! -->
+<pre class="shifted">
+ /* override normal flow */
+ div {display: inline; }
+ span {display: block; } </pre>
+		
+		<p><strong>Caution</strong>. It is not usually a good idea to override the display flow of <i>&lt;div&gt;</i> elements and <i>&lt;span&gt;</i> elements, because, for example, if you need to break HTML into blocks you can just use a <i>&lt;div&gt;</i> and not an overridden <i>&lt;span&gt;</i>. Overriding the <i>&lt;span&gt;</i> makes the code less intuitive for programmers (including yourself) who might want to make modifications later. If it is absolutely necessary to override a span, probably a better idea would be to create a class, like "overriddenSpan," which more clearly identifies particular spans that have been overridden. </p>
+		
+		<p><strong>Demonstration</strong>. Below is a demonstration of <i>&lt;div&gt;</i> elements and <i>&lt;span&gt;</i> elements, using both normal flow and flow overidden using CSS <i>display</i> property. </p>
+
+		<div class="shifted">
+		<div>Normal <i>&lt;div&gt;</i> text. </div>
+		<div>Normal <i>&lt;div&gt;</i> text. </div>
+		<div>Normal <i>&lt;div&gt;</i> text. </div>		
+		<br /> 
+		<span>Normal <i>&lt;span&gt;</i> text. </span>
+		<span>Normal <i>&lt;span&gt;</i> text. </span>
+		<span>Normal <i>&lt;span&gt;</i> text. </span>
+		<br /> <br />
+		<div style="display: inline">Overridden <i>&lt;div&gt;</i> text. </div>
+		<div style="display: inline">Overridden <i>&lt;div&gt;</i> text. </div>
+		<div style="display: inline">Overridden <i>&lt;div&gt;</i> text. </div>
+		<br /> <br />
+		<span style="display: block">Overridden <i>&lt;span&gt;</i> text. </span>
+		<span style="display: block">Overridden <i>&lt;span&gt;</i> text. </span>
+		<span style="display: block">Overridden <i>&lt;span&gt;</i> text. </span>
+		</div> <!-- end: div class="indentedDiv" -->
+
+		</div> <!-- end: div class="twoColumn" -->
+		
+		<hr />
+	
+	</section>
+	
+	<section title="floatProperty">
+	
+		<div class="twoColumn">
+		
+		<h3>The <i>float</i> Property</h3>
+		
+		<p><strong>Discussion</strong>. <img height="50" src="favoriteproperties02.png" />If an image is inserted into a paragraph in the normal flow, with no special CSS formatting, it can appear rather awkward. </p>
+		
+		<p style="text-align: justify;"><img id="catFloat" height="50" src="favoriteproperties02.png" />That's why it's sometimes better to "float" the image, changing the flow. Elements can be floated to the left or to the right using the <i>float</i> property. This image is floated right, so the flow of text appears a bit more natural. The words flow around the image, including any additional space, like margin, border or padding, specified in the CSS.</p>
+		
+		</div> <!-- end: div class="twoColumn" -->
+		
+		<hr />
+	
+	</section>
+	
+	<section title="ChromeDevTools">
+		
+		<h3>Chrome DevTools</h3>
+		
+		<p>Here's a screenshot of the web page title changing color to purple using Chrome DevTools.</p>
+		
+		<img width="100%" src="https://csis.svsu.edu/~gpcorser/cis255/favoriteproperties03.png" />
+		
+	</section>
+
+	
+	</main>
+
+	<footer>
+		<p id="copyright">&copy; 2018 George Corser. </p>
+	</footer>
+
+</body>
+</html>
+
+<!-- COPYRIGHT NOTICE -->
+<!--
+	GNU General Public License (http://www.gnu.org/licenses/)
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.   
+-->
